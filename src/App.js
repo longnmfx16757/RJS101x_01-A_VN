@@ -6,6 +6,12 @@ import { STAFFS } from "./shared/staffs";
 import StaffList from "./components/StaffListComponent";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      staffs: STAFFS,
+    };
+  }
   render() {
     return (
       <div>
@@ -14,6 +20,7 @@ class App extends Component {
             <NavbarBrand href="/">Ứng dụng quản lý nhân sự v1.0</NavbarBrand>
           </div>
         </Navbar>
+        <StaffList staffs={this.state.staffs} />
       </div>
     );
   }
