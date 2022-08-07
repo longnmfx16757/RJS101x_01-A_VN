@@ -17,11 +17,12 @@ class Main extends Component {
     };
   }
   render() {
+    const staff = JSON.parse(localStorage.getItem("staffs"));
     const StaffWithId = ({ match }) => {
       return (
         <StaffDetail
           staffs={
-            this.state.staffs.filter(
+            staff.filter(
               (staff) => staff.id === parseInt(match.params.id, 10)
             )[0]
           }
